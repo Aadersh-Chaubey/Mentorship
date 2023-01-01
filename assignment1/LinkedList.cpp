@@ -93,19 +93,19 @@ class LinkedList{
     }
 
 };
-int main(){
-    LinkedList l;
-    for(int i = 0; i < 100; i++){
-        l.add(i);
-    }
-    // l.insert(0, 1);
-    l.erase(99);
-    for(int i = 0; i < l.size(); i++){
-        cout << l.get(i)<<endl;
-    }
-    l.clear();
-    for(int i = 0; i < l.size(); i++){
-        cout << l.get(i)<<endl;
-    }
+// int main(){
+//     LinkedList l;
+//     for(int i = 0; i < 100; i++){
+//         l.add(i);
+//     }
+//     // l.insert(0, 1);
+//     l.erase(99);
+//     for(int i = 0; i < l.size(); i++){
+//         cout << l.get(i)<<endl;
+//     }
+//     l.clear();
+//     for(int i = 0; i < l.size(); i++){
+//         cout << l.get(i)<<endl;
+//     }
     
-}
+// }
