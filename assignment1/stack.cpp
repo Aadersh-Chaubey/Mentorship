@@ -1,13 +1,13 @@
 #include <iostream>
-#include "LinkedList.cpp"
 using namespace std;
 
 class Stack{
+    //this node have a next and a pre pointer along with data;
     class node{
         public:
         int data;
-        node* next;
-        node* pre;
+        node* next; // next pointer points to the next node
+        node* pre; // pre pointer points to the previous node
         node(int data, node* next, node* pre){
             this->next = next;
             this->data = data;
@@ -19,9 +19,8 @@ class Stack{
             this->pre = NULL;
         }
     };
-
-    node* BOTTOM;
-    node* TOP;
+    node* BOTTOM; // dummy node, BOTTOM->next = first node
+    node* TOP; // points to latest node
     int SIZE;
     public:
     Stack(){
