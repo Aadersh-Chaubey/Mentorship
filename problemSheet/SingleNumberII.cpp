@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/single-number-ii/
 // TC= O(n)
-// sc= O(n)
+// sc= O(1)
 // in this solution i have created an array of size 33 to store bits of our array
 // since every number occurs three times, so every bit should occur be 3*k number of times
 // but since one number which occur only one times, we can easily identify it by finding which bit is not divisible by 3
