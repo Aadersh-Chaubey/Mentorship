@@ -1,0 +1,49 @@
+
+
+//TC= O(nlogn) , because i used sorting in this
+// SC =O(1)
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int j = nums.size() - 2;
+        while(j >= 0 && nums[j] >=  nums[j + 1])j--;
+        if(j == -1)sort(nums.begin(), nums.end());
+        else{
+            sort(nums.begin() + j + 1, nums.end());
+            int next = j;
+            while(nums[next] <= nums[j])next++;
+            cout << j << " " <<next << endl;
+            int t = nums[j];
+            nums[j] = nums[next];
+            nums[next] = t;
+        }
+    }
+};
+
+// there a better solution i saw in the comment section
+// according to wikipedia it came from narayan pandit in 14th century(600 years ago!!!)
+
+// TC= O(n)
+// SC= O(1)
+
+// first find the biggest index j s.t. nums[j] < nums[j + 1]
+// if no such j the reverse the array and return
+// else find the biggest index which is larger than nums[j]
+// swap them
+// reverse the array from nums[j + 1] to the end
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int n = nums.size(), j = n - 2;
+        while(j >= 0 && nums[j] >= nums[j + 1])j--;
+        if(j < 0)reverse(nums.begin(), nums.end());
+        else{
+            int k = n - 1;
+            while(nums[k] <= nums[j])k--;
+            int t = nums[j];
+            nums[j] = nums[k];
+            nums[k] = t;
+            reverse(nums.begin() + j + 1, nums.end());
+        }
+    }
+};
